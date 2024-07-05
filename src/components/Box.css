@@ -1,0 +1,63 @@
+.space {
+    perspective: 1000px;
+    width: 200px;
+    height: 200px;
+    position: relative;
+    margin: 50px auto;
+    background: radial-gradient(circle, #000428, #004e92);
+    border-radius: 50%;
+    overflow: hidden;
+  }
+  
+  .star {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotateX(60deg) rotateY(0deg) rotateZ(45deg);
+    transform-style: preserve-3d;
+    animation: rotate 10s infinite linear;
+  }
+  
+  @keyframes rotate {
+    from {
+      transform: translate(-50%, -50%) rotateX(60deg) rotateY(0deg) rotateZ(45deg);
+    }
+    to {
+      transform: translate(-50%, -50%) rotateX(60deg) rotateY(360deg) rotateZ(45deg);
+    }
+  }
+  
+  .face {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: yellow;
+    transform-origin: center;
+  }
+  
+  .face.front {
+    transform: translateZ(50px);
+  }
+  
+  .face.back {
+    transform: rotateY(180deg) translateZ(50px);
+  }
+  
+  .face.left {
+    transform: rotateY(-90deg) translateZ(50px);
+  }
+  
+  .face.right {
+    transform: rotateY(90deg) translateZ(50px);
+  }
+  
+  .face.top {
+    transform: rotateX(90deg) translateZ(50px);
+  }
+  
+  .face.bottom {
+    transform: rotateX(-90deg) translateZ(50px);
+  }
+  
