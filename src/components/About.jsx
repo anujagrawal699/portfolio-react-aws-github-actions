@@ -1,6 +1,16 @@
 import React from 'react'
 import { ABOUT_TEXT } from '../constants'
 import { motion } from 'framer-motion'
+import aboutSvg from '../assets/about.svg';
+
+const container = (delay) => ({
+    hidden: {x: -100, opacity: 0},
+    visible: {
+      x: 0,
+      opacity: 1,
+      transition: {duration: 0.5, delay: delay}
+    },
+  });
 
 const About = () => {
   return <div className='border-b border-neutral-800 pb-4'>
@@ -14,7 +24,11 @@ const About = () => {
       transition={{duration: 0}} className='w-full lg:w-1/2 lg:p-8'>
       <div
       className='flex items-center justify-center'>
-       <img src='/about.svg' className='h-60 w-60' />
+       <motion.img
+        variants={container(1)}
+        initial="hidden"
+        animate="visible"
+       src={aboutSvg} className='h-40 w-40' />
       </div>
       </motion.div>
       <motion.div
