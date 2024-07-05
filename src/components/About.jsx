@@ -25,7 +25,7 @@ const About = () => {
       <div
       className='flex items-center justify-center'>
        <motion.img
-        variants={container(1)}
+        variants={container(0.25)}
         initial="hidden"
         animate="visible"
        src={aboutSvg} className='h-40 w-40' />
